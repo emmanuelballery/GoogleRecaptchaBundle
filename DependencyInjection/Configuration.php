@@ -21,10 +21,10 @@ class Configuration implements ConfigurationInterface
 
         $root = $tb->root('google_recaptcha');
 
-        $root->children()->scalarNode('api_endpoint')->cannotBeEmpty()->info('')->defaultValue('https://www.google.com/recaptcha/api/siteverify');
+        $root->children()->scalarNode('api_endpoint')->cannotBeEmpty()->info('Google Recaptcha API endpoint')->defaultValue('https://www.google.com/recaptcha/api/siteverify');
         $root->children()->scalarNode('site_key')->isRequired()->cannotBeEmpty()->info('Google Recaptcha site key');
         $root->children()->scalarNode('secret_key')->isRequired()->cannotBeEmpty()->info('Google Recaptcha secret key');
-        $root->children()->scalarNode('form_field_name')->cannotBeEmpty()->info('g-recaptcha-response')->defaultValue('');
+        $root->children()->scalarNode('form_field_name')->cannotBeEmpty()->info('Google Recaptcha form field name')->defaultValue('g-recaptcha-response');
 
         return $tb;
     }
