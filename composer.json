@@ -2,6 +2,7 @@
   "name": "emmanuelballery/googlerecaptchabundle",
   "description": "Google reCATPCHA form type and validator",
   "type": "symfony-bundle",
+  "license": "MIT",
   "require": {
     "php": ">=5.4",
     "symfony/symfony": "2.8.*",
