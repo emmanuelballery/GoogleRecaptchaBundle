@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="GoogleRecaptchaBundle\Form\Type\GoogleRecaptchaType" class="GoogleRecaptchaBundle\Form\Type\GoogleRecaptchaType">
+            <argument>%google_recaptcha.site_key%</argument>
+            <argument>%google_recaptcha.form_field_name%</argument>
+            <argument type="service" id="request_stack"/>
+            <argument type="service" id="google_recaptcha.validator.google_recaptcha_validator"/>
+            <argument type="service" id="translator" on-invalid="null"/>
+            <tag name="form.type"/>
+        </service>
+    </services>
+</container>

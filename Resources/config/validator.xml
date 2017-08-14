@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="google_recaptcha.validator.google_recaptcha_client" class="GuzzleHttp\Client"/>
+        <service id="google_recaptcha.validator.google_recaptcha_validator" class="GoogleRecaptchaBundle\Validator\GoogleRecaptchaValidator">
+            <argument>%google_recaptcha.api_endpoint%</argument>
+            <argument>%google_recaptcha.secret_key%</argument>
+            <argument type="service" id="request_stack"/>
+            <argument type="service" id="google_recaptcha.validator.google_recaptcha_client"/>
+            <argument type="service" id="logger" on-invalid="null"/>
+            <tag name="monolog.logger" channel="google_recaptcha"/>
+        </service>
+    </services>
+</container>
