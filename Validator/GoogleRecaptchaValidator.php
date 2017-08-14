@@ -91,6 +91,8 @@ class GoogleRecaptchaValidator
 
                 if (null !== $json = json_decode($body, true)) {
                     if ($json['success']) {
+                        $this->logger->debug('google says ok !');
+
                         return true;
                     }
 
