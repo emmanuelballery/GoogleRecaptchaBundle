@@ -1,3 +1,0 @@
-google_recaptcha:
-  form_type_field: Google reCAPTCHA
-  invalid_recaptcha: reCAPTCHA invalide.
