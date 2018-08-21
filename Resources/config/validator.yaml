@@ -8,8 +8,7 @@ services:
     google_recaptcha.validator.google_recaptcha_client:
         class: 'GuzzleHttp\Client'
 
-    google_recaptcha.validator.google_recaptcha_validator:
-        class: 'GoogleRecaptchaBundle\Validator\GoogleRecaptchaValidator'
+    GoogleRecaptchaBundle\Validator\GoogleRecaptchaValidator:
         arguments:
             - '%google_recaptcha.api_endpoint%'
             - '%google_recaptcha.secret_key%'
