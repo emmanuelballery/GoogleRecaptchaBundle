@@ -51,8 +51,13 @@ class GoogleRecaptchaType extends AbstractType
      * @param GoogleRecaptchaValidator $validator     Validator
      * @param TranslatorInterface      $translator    Translator
      */
-    public function __construct($siteKey, $formFieldName, RequestStack $requestStack, GoogleRecaptchaValidator $validator, TranslatorInterface $translator = null)
-    {
+    public function __construct(
+        $siteKey,
+        $formFieldName,
+        RequestStack $requestStack,
+        GoogleRecaptchaValidator $validator,
+        TranslatorInterface $translator = null
+    ) {
         $this->siteKey = $siteKey;
         $this->formFieldName = $formFieldName;
         $this->requestStack = $requestStack;
@@ -61,7 +66,7 @@ class GoogleRecaptchaType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -83,7 +88,7 @@ class GoogleRecaptchaType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function configureOptions(OptionsResolver $resolver)
     {
@@ -98,7 +103,7 @@ class GoogleRecaptchaType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function getBlockPrefix()
     {

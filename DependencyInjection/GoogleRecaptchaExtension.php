@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 class GoogleRecaptchaExtension extends Extension
 {
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -27,8 +27,8 @@ class GoogleRecaptchaExtension extends Extension
         $container->setParameter('google_recaptcha.secret_key', $config['secret_key']);
         $container->setParameter('google_recaptcha.form_field_name', $config['form_field_name']);
 
-        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-        $loader->load('form.xml');
-        $loader->load('validator.xml');
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader->load('form.yaml');
+        $loader->load('validator.yaml');
     }
 }

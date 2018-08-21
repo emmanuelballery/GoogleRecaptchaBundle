@@ -1,0 +1,10 @@
+services:
+
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    GoogleRecaptchaBundle\Form\Type\GoogleRecaptchaType:
+        $siteKey: '%google_recaptcha.site_key%'
+        $formFieldName: '%google_recaptcha.form_field_name%'
