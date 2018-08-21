@@ -5,15 +5,13 @@ services:
         autoconfigure: true
         public: false
 
-    google_recaptcha.validator.google_recaptcha_client:
+    GoogleRecaptchaBundle\Validator\GoogleRecaptchaValidatorClient:
         class: 'GuzzleHttp\Client'
 
     GoogleRecaptchaBundle\Validator\GoogleRecaptchaValidator:
         arguments:
-            - '%google_recaptcha.api_endpoint%'
-            - '%google_recaptcha.secret_key%'
-            - '@request_stack'
-            - '@google_recaptcha.validator.google_recaptcha_client'
-            - '@logger'
+            $apiEndpoint: '%google_recaptcha.api_endpoint%'
+            $secretKey: '%google_recaptcha.secret_key%'
+            $client: '@GoogleRecaptchaBundle\Validator\GoogleRecaptchaValidatorClient'
         tags:
             - { name: 'monolog.logger', channel: 'google_recaptcha' }
