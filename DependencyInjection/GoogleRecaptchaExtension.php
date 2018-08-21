@@ -28,7 +28,7 @@ class GoogleRecaptchaExtension extends Extension
         $container->setParameter('google_recaptcha.form_field_name', $config['form_field_name']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-        $loader->load('form.yml');
-        $loader->load('validator.yml');
+        $loader->load('form.yaml');
+        $loader->load('validator.yaml');
     }
 }
