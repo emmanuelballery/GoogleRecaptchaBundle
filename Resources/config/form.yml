@@ -1,0 +1,13 @@
+services:
+
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    GoogleRecaptchaBundle\Form\Type\GoogleRecaptchaType:
+        - '%google_recaptcha.site_key%'
+        - '%google_recaptcha.form_field_name%'
+        - '@request_stack'
+        - '@google_recaptcha.validator.google_recaptcha_validator'
+        - '@translator'
